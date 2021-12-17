@@ -2,14 +2,11 @@
 
     <h1>@ViewBag.title</h1>
 
-    @if(ViewBag.jobs.Count == 0)
-    {
+    @{
         //TODO #1: Use a loop to display job results in a table.
-        <p>Nothing to see here!</p>
     }
-    else
-    {
-        @foreach(var job in ViewBag.jobs)
+
+    @foreach(var job in ViewBag.jobs)
         {
             <table class="job-listing">
                 <tr>
@@ -68,6 +65,4 @@
 
             </table>
         }
-    }
-
 </div>
