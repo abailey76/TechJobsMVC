@@ -1,14 +1,25 @@
-﻿<div class="container body-content">
-
-    <h1>@ViewBag.title</h1>
-
-    @{
+﻿    @{
         //TODO #1: Use a loop to display job results in a table.
     }
 
-    @foreach(var job in ViewBag.jobs)
+<div class="container body-content">
+
+    <h1>@ViewBag.title</h1>
+
+
+   
+    @if (ViewBag.jobs.Count == 0)
+    {
+        <p>No events yet!</p>
+    }
+    else
+    {
+
+
+        @foreach (var job in ViewBag.jobs)
         {
-            <table class="job-listing">
+            <table class="table">
+
                 <tr>
                     <th>
                         ID
@@ -56,7 +67,7 @@
 
                 <tr>
                     <th>
-                        Core Competency
+                        CoreCompentency
                     </th>
                     <td>
                         @job.CoreCompetency
@@ -65,4 +76,9 @@
 
             </table>
         }
+
+    }
+
+
+
 </div>
